@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Описание страницы сайта."/>
+  <title>Form</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<form name="myForm" class="form" action="" method="post">
+  <figure class="form__block form__block--first">
+    <label for="name">Ваше имя</label>
+    <input type="text" name="name" placeholder="Введите имя" id="name">
+    <label for="tel">Ваш телефон</label>
+    <input type="tel" name="tel" placeholder="Введите номер" id="tel">
+  </figure>
+  
+  <figure class="form__block form__block--second">
+    <label for="email">Ваша почта</label>
+    <input type="email" name="email" placeholder="почта" id="email">
+    <label for="comment-field">Введите ваш отзыв:</label>
+    <textarea name="comment" id="comment-field">Текст комментария</textarea>
+  </figure>
+  <figure class="form__block form__block--third">
+    <label for="country">Выбирете страну</label>
+    <select name="country" id="country">
+      <option>Канада</option>
+      <option>Франция</option>
+      <option>Германия</option>
+      <option>Италия</option>
+      <option>Япония</option>
+      <option>Россия</option>
+      <option>Великобритания</option>
+      <option>США</option>
+    </select>
+  </figure>
+  
+  <div class="form__button">
+    <button type="button" class="button-prev button"><< Prev</button>
+    <button type="button" class="button-next button">Next >></button>
+    <button type="submit" class="submit-button button hide">Submit</button>
+  </div>
+  <div class="errors"></div>
+</form>
+
+<script src="js/script.js"></script>
+</body>
+</html>
