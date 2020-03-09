@@ -1,4 +1,5 @@
 .form {
+  position: relative;
   width: 500px;
   margin: auto;
 }
@@ -58,6 +59,18 @@ input::placeholder {
   display: block;
 }
 
+.errors {
+  color: red;
+  width: 150px;
+  height: auto;
+  text-align: center;
+  background: rgba(0,0,0, .2);
+  position: absolute;
+  top: 32%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
 
 @media (max-width: $desktop-width) {
   .form {

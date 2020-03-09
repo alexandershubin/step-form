@@ -1,7 +1,7 @@
 class Form {
   constructor(form) {
     this.isStorageSupport = true;
-    this.storage = undefined;
+    this.storage = '';
     this.localStorage = undefined;
     this.stage = 0;
 
@@ -55,14 +55,23 @@ class Form {
     if (!name.value || !tel.value) {
       this._setErrors('Заполните форму');
       return false;
+    } else {
+      if (this.isStorageSupport) {
+        this.localStorage.setItem('name', name.value);
+      }
     }
-
+    this._setErrors('');
     return true;
   }
 
+  /**
+   * показывает текст при ошибке
+   * @param text
+   * @private
+   */
   _setErrors(text = '') {
     this.els.error.innerHTML = text;
-}
+  }
 
   /**
    * показывает первый шаг формы
@@ -155,7 +164,7 @@ class Form {
 
     const formData = new FormData(this.els.form);
 
-    console.log('Данные формы:' , {
+    console.log('Данные формы:', {
       'Имя': formData.get('name'),
       'Телефон': formData.get('tel'),
       'Страна': formData.get('country'),
